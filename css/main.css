@@ -1,0 +1,79 @@
+@import url(reset.css);
+body {
+  /* 백그라운드에서 이미지를 삽입하면 기본값이repeat */
+  background: url("../images/bg0.jpg") no-repeat;
+  block-size: cover;
+}
+
+/* 1200px - 데스크톱 / 노트북 */
+/* 1000px - 작은 데스크톱 / 태블릿 가로 */
+/* 768px - 태블릿 세로 */
+/* 390px - 스마트폰 세로 */
+
+/* h1은 pc버전부터 보인다 */
+h1 {
+  font-size: 72px;
+}
+/* h2는 태블릿에서만 보인다 */
+h2 {
+  display: none;
+}
+/* h3는 모바일일때만 보인다 */
+h3 {
+  display: none;
+}
+.box {
+  /* 영역을 잡는다고 할때 너비값을 얼마 줄것인지 max-width와 min-width 코드를 처음부터 만들어줘야한다 */
+  width: 80%;
+  /* 너비값을 얼마 주느냐에 따라서 반응을 하게끔 처음부터 코드를 만들어줘야한다 */
+  max-width: 1000px;
+  min-width: 290px;
+  height: 300px;
+  margin: auto;
+  background-color: powderblue;
+}
+
+/* 반응형 */
+/* 너비가 1200PX일 때 */
+@media (max-width: 1200px) {
+  body {
+    background: url("../images/bg0.jpg");
+  }
+  h1 {
+    font-size: 72px;
+    color: red;
+  }
+}
+/* 너비가 1000px 일 때 -*/
+@media (max-width: 1000px) {
+  body {
+    background: url(../images/bg1.jpg);
+  }
+}
+/* 너비가 768px 일 때 - 태블릿 */
+@media (max-width: 768px) {
+  body {
+    background: url(../images/bg2.jpg);
+  }
+  /* 태블릿인 전용 글자 h2가 보인다 */
+  h2 {
+    display: block;
+  }
+}
+/* 너비가 390px 일 때 - 모바일 */
+@media (max-width: 390px) {
+  body {
+    background: url(../images/bg3.jpg);
+  }
+  h1 {
+    font-size: 21px;
+  }
+  /* 태블릿 전용 글자 h2 안보이기 */
+  h2 {
+    display: none;
+  }
+  /* 모바일 전용 글자 h3가 보인다 */
+  h3 {
+    display: block;
+  }
+}

@@ -1,0 +1,53 @@
+@import url(reset.css);
+/* 기본세팅 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 전체 영역 */
+.container {
+  width: 90%;
+  max-width: 700px;
+  min-width: 290px;
+  margin: auto;
+  padding: 3%;
+  background-color: powderblue;
+}
+/* 카드 영역 */
+.card li {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  background-color: #fff;
+}
+/* 이미지 영역 */
+.img-box,
+.text-box {
+  width: 50%;
+  /* 한블록차지하는애들끼리 반반 가져가서 정렬되어보임 */
+}
+
+@media (max-width: 768px) {
+  .card-text h3 {
+    font-size: 12px;
+  }
+  .card-text p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 크기가 작아졌을 때 폼을 세로 카드 형식으로 바꾸기 위함 */
+  .card li {
+    flex-direction: column;
+  }
+  /* 작아졌을때 각각 너비를 100%채울 목적 */
+  .img-box,
+  .text-box {
+    width: 100%;
+  }
+  .text-box{
+    padding: 2%;
+  }
+}

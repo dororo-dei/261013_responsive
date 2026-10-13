@@ -1,0 +1,47 @@
+@import url(reset.css);
+.container {
+  width: 90%;
+  max-width: 700px;
+  min-width: 290px;
+  padding: 3%;
+  margin: auto;
+  background-color: powderblue;
+}
+.card li {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  margin-bottom: 2%; /*20px이 한 2%정도된다*/
+  background-color: floralwhite;
+}
+.card li:last-child {
+  margin-bottom: 0;
+}
+/* 이미지 영역 */
+.img-box,
+.card-txt {
+  width: 50%;
+  /* css에서 width의 %는 일반적으로 부모 요소의 콘텐츠 영역 너비를 기준으로 계산하며 정확히는 해당 요소의 컨테이닝 블록 너비를 기준으로 한다 */
+}
+
+@media (max-width: 768px) {
+  .card-text h3 {
+    font-size: 12px;
+  }
+  .card-text p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card li {
+    flex-direction: column;
+  }
+  .img-box,
+  .card-txt {
+    width: 100%;
+  }
+  .card-text {
+    padding: 2%;
+  }
+}
