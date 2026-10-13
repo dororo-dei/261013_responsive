@@ -1,0 +1,42 @@
+@import url(reset.css);
+.container {
+  width: 90%;
+  max-width: 1200px;
+  min-width: 290px;
+  margin: 50px auto;
+}
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-wrap = 넘치는 애를 밑으로 내려라 */
+  /* 부모한테 꼭 적용해줘야함 */
+  gap: 10px;
+  /* gap을 주는 순간 gap만큼 사이즈가 커져서 튕겨져 나간다 */
+  /* gap에는 %보다 px로 주는게 좋다 왜냐하면 */
+  background-color: palevioletred;
+}
+.card-list li {
+  width: calc((100% - 50px) / 6) ;
+  /* gap 5개를 뺐다는 뜻 */
+  padding: 3%;
+  background-color: pink;
+}
+
+@media (max-width: 768px) {
+  .card-list li {
+    width: calc((100% - 40px )/ 5) ;
+    /* gap 4개를 뺐다는 뜻 */
+  }
+}
+@media (max-width: 480px) {
+  .card-list li {
+    width: calc((100% - 30px) / 4);
+    /* 즉, 내가 gap을 얼마 줬느냐에따라 100% - gap값 / 4 */
+  }
+}
+@media (max-width: 390px) {
+  .card-list li {
+    width: 100%;
+    /* 그냥 일자니까 100% */
+  }
+}
